@@ -1,0 +1,144 @@
+[gd_resource type="MaterialShaderGraph" load_steps=13 format=1]
+
+[ext_resource path="res://addons/zylann.terrain/textures/CliffFace.jpg" type="Texture" id=1]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Straw.png" type="Texture" id=2]
+[ext_resource path="res://addons/zylann.terrain/textures/Grass.jpg" type="Texture" id=3]
+[ext_resource path="res://addons/zylann.terrain/textures/Dirt_Diff.jpg" type="Texture" id=4]
+[ext_resource path="res://addons/zylann.terrain/textures/Mud.jpg" type="Texture" id=5]
+[ext_resource path="res://addons/zylann.terrain/textures/Sand.jpg" type="Texture" id=6]
+[ext_resource path="res://addons/zylann.terrain/textures/ChalkFace_Diff.jpg" type="Texture" id=7]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_DryMud.png" type="Texture" id=8]
+[ext_resource path="res://addons/zylann.terrain/textures/Tarmac.jpg" type="Texture" id=9]
+[ext_resource path="res://addons/zylann.terrain/textures/Snow.jpg" type="Texture" id=10]
+
+[sub_resource type="ImageTexture" id=1]
+
+flags = 5
+image = Image( 256, 1, 0, GRAYSCALE, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 16, 17, 19, 22, 24, 27, 29, 32, 36, 39, 43, 47, 52, 56, 61, 66, 71, 76, 80, 84, 88, 92, 96, 99, 103, 107, 112, 116, 121, 126, 131, 136, 142, 147, 153, 159, 164, 169, 175, 179, 184, 188, 193, 196, 200, 203, 206, 209, 212, 214, 216, 218, 220, 222, 224, 225, 227, 229, 230, 231, 233, 234, 235, 236, 237, 239, 240, 241, 241, 242, 243, 244, 245, 246, 246, 247, 248, 249, 249, 250, 251, 251, 252, 252, 253, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
+size = Vector2( 256, 1 )
+storage = 0
+lossy_quality = 0.7
+
+[sub_resource type="ImageTexture" id=2]
+
+flags = 5
+image = Image( 256, 1, 0, GRAYSCALE, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 7, 8, 10, 11, 12, 14, 16, 18, 20, 23, 27, 34, 46, 69, 79, 85, 91, 100, 110, 122, 137, 154, 170, 183, 194, 202, 208, 212, 216, 220, 223, 225, 228, 230, 232, 234, 235, 237, 238, 239, 241, 242, 243, 244, 244, 245, 246, 247, 248, 248, 249, 250, 251, 251, 252, 253, 253, 253, 254, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
+size = Vector2( 256, 1 )
+storage = 0
+lossy_quality = 0.7
+
+[resource]
+
+_code = {
+"default_tex": [ "cmap_47", SubResource( 1 ), "Terrain_Cliff", ExtResource( 1 ), "Terrain_Straw", ExtResource( 2 ), "Terrain_Grass", ExtResource( 3 ), "Terrain_Dirt", ExtResource( 4 ), "Terrain_Mud", ExtResource( 5 ), "Terrain_Sand", ExtResource( 6 ), "Terrain_Slope", ExtResource( 7 ), "Terrain_DryMud", ExtResource( 8 ), "Terrain_Tarmac2", ExtResource( 9 ), "cmap_41", SubResource( 2 ), "Terrain_Snow_2", ExtResource( 10 ) ],
+"fragment": "vec3 nd1sl9=COLOR.rgb;
+vec3 nd1sl5=vec3(UV,0);
+vec3 nd1sl13=VAR2.rgb;
+vec3 nd1sl12=VAR1.rgb;
+vec3 DIFFUSE_OUT=vec3(0,0,0);
+float ALPHA_OUT=0;
+uniform float Scalar=35;
+float nd3sl0=Scalar;
+vec3 nd2sl0=nd1sl5*nd3sl0;
+uniform texture Terrain_Dirt;vec4 rt_read_tex31=tex(Terrain_Dirt,nd2sl0.xy);
+vec3 nd31sl0=rt_read_tex31.rgb;
+float nd31sl1=rt_read_tex31.a;
+float nd4sl0=nd1sl9.x;
+float nd4sl1=nd1sl9.y;
+float nd4sl2=nd1sl9.z;
+float nd5sl0=cos(nd4sl2);
+float nd7sl0=sin(nd4sl0);
+float nd8sl0=sin(nd4sl1);
+float nd6sl0=nd7sl0*nd8sl0;
+float nd9sl0=sin(nd4sl2);
+float nd10sl0=cos(nd4sl0);
+float nd11sl0=cos(nd4sl1);
+float nd12sl0=nd8sl0*nd10sl0;
+float nd13sl0=nd10sl0*nd11sl0;
+float nd14sl0=nd7sl0*nd11sl0;
+float nd15sl0=nd6sl0*nd9sl0;
+uniform texture Terrain_Grass;vec4 rt_read_tex32=tex(Terrain_Grass,nd2sl0.xy);
+vec3 nd32sl0=rt_read_tex32.rgb;
+float nd32sl1=rt_read_tex32.a;
+uniform texture Terrain_Cliff;vec4 rt_read_tex36=tex(Terrain_Cliff,nd2sl0.xy);
+vec3 nd36sl0=rt_read_tex36.rgb;
+float nd36sl1=rt_read_tex36.a;
+float nd26sl0=nd12sl0*nd5sl0;
+vec3 nd20sl0=mix(nd31sl0,nd32sl0,nd26sl0);
+uniform texture Terrain_Mud;vec4 rt_read_tex33=tex(Terrain_Mud,nd2sl0.xy);
+vec3 nd33sl0=rt_read_tex33.rgb;
+float nd33sl1=rt_read_tex33.a;
+uniform texture Terrain_Sand;vec4 rt_read_tex35=tex(Terrain_Sand,nd2sl0.xy);
+vec3 nd35sl0=rt_read_tex35.rgb;
+float nd35sl1=rt_read_tex35.a;
+uniform texture Terrain_DryMud;vec4 rt_read_tex38=tex(Terrain_DryMud,nd2sl0.xy);
+vec3 nd38sl0=rt_read_tex38.rgb;
+float nd38sl1=rt_read_tex38.a;
+float nd53sl0=nd11sl0*nd5sl0;
+float nd24sl0=nd6sl0*nd5sl0;
+float nd25sl0=nd10sl0*nd8sl0;
+float nd30sl0=nd14sl0*nd5sl0;
+float nd27sl0=nd8sl0*nd9sl0;
+float nd54sl0=nd7sl0*nd9sl0;
+float nd29sl0=nd27sl0*nd10sl0;
+vec3 nd19sl0=mix(nd20sl0,nd33sl0,nd30sl0);
+uniform texture Terrain_Tarmac2;vec4 rt_read_tex34=tex(Terrain_Tarmac2,nd2sl0.xy);
+vec3 nd34sl0=rt_read_tex34.rgb;
+float nd34sl1=rt_read_tex34.a;
+float nd23sl0=nd53sl0*nd9sl0;
+vec3 nd21sl0=mix(nd19sl0,nd34sl0,nd23sl0);
+vec3 nd17sl0=mix(nd21sl0,nd35sl0,nd24sl0);
+float nd28sl0=nd54sl0*nd11sl0;
+uniform texture Terrain_Straw;vec4 rt_read_tex37=tex(Terrain_Straw,nd2sl0.xy);
+vec3 nd37sl0=rt_read_tex37.rgb;
+float nd37sl1=rt_read_tex37.a;
+vec3 nd16sl0=mix(nd17sl0,nd36sl0,nd28sl0);
+uniform texture Terrain_Slope;vec4 rt_read_tex42=tex(Terrain_Slope,nd2sl0.xy);
+vec3 nd42sl0=rt_read_tex42.rgb;
+float nd42sl1=rt_read_tex42.a;
+float nd39sl0=nd1sl12.x;
+float nd39sl1=nd1sl12.y;
+float nd39sl2=nd1sl12.z;
+float nd40sl0=sin(nd39sl1);
+uniform texture cmap_41;
+float nd41sl0=tex(cmap_41,vec2(nd40sl0,0)).r;
+vec3 nd22sl0=mix(nd16sl0,nd37sl0,nd29sl0);
+uniform texture Terrain_Snow_2;vec4 rt_read_tex51=tex(Terrain_Snow_2,nd2sl0.xy);
+vec3 nd51sl0=rt_read_tex51.rgb;
+float nd51sl1=rt_read_tex51.a;
+float nd44sl0=nd1sl13.x;
+float nd44sl1=nd1sl13.y;
+float nd44sl2=nd1sl13.z;
+uniform float Scalar_2=25;
+float nd46sl0=Scalar_2;
+float nd45sl0=nd44sl1-nd46sl0;
+float nd52sl0=sign(nd45sl0);
+uniform float Scalar_3=1;
+float nd49sl0=Scalar_3;
+float nd48sl0def=0;
+float nd48sl0=max(nd48sl0def,nd49sl0);
+uniform texture cmap_47;
+float nd47sl0=tex(cmap_47,vec2(nd52sl0,0)).r;
+vec3 nd18sl0=mix(nd22sl0,nd38sl0,nd15sl0);
+vec3 nd43sl0=mix(nd18sl0,nd42sl0,nd41sl0);
+vec3 nd50sl0=mix(nd43sl0,nd51sl0,nd47sl0);
+DIFFUSE_OUT=nd50sl0;
+DIFFUSE=DIFFUSE_OUT;
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "mat4 nd1sl10=PROJECTION_MATRIX;
+vec3 nd1sl1=SRC_NORMAL;
+vec3 nd1sl0=SRC_VERTEX;
+vec3 nd3sl0=(nd1sl10*vec4(nd1sl1,1)).xyz;
+vec3 nd2sl0=(nd1sl10*vec4(nd1sl0,1)).xyz;
+VAR1.rgb=nd3sl0;
+VAR2.rgb=nd2sl0;
+",
+"vertex_ofs": 0
+}
+_data = {
+"shaders": [ [ 0, 33, Vector2( 350, 40 ), null, null, [ 8, 3, 0, 9, 2, 0 ], 1, 0, Vector2( 50, 40 ), null, null, [  ], 2, 12, Vector2( 229.333, 175.833 ), null, null, [ 0, 1, 10, 1, 1, 0, 2147483647, 0, null, 2147483647, 1, null ], 3, 12, Vector2( 225.467, 26.0667 ), null, null, [ 0, 1, 10, 1, 1, 1, 2147483647, 0, null, 2147483647, 1, null ] ], [ 0, 33, Vector2( 1391, 413 ), null, null, [ 0, 50, 0 ], 1, 0, Vector2( 50, 40 ), null, null, [  ], 2, 9, Vector2( 221, 270 ), 0, null, [ 0, 1, 5, 1, 3, 0, 2147483647, 0, null, 2147483647, 1, null ], 3, 26, Vector2( 62, -36 ), "Scalar", 35.0, [  ], 4, 18, Vector2( 182, -193 ), null, null, [ 0, 1, 9, 2147483647, 0, null ], 5, 14, Vector2( 311, -128 ), 1, null, [ 0, 4, 2, 2147483647, 0, null ], 6, 7, Vector2( 448, -498 ), 2, null, [ 0, 7, 0, 1, 8, 0, 2147483647, 0, null, 2147483647, 1, null ], 7, 14, Vector2( 304, -492 ), 0, null, [ 0, 4, 0, 2147483647, 0, null ], 8, 14, Vector2( 305, -419 ), 0, null, [ 0, 4, 1, 2147483647, 0, null ], 9, 14, Vector2( 308, -347 ), 0, null, [ 0, 4, 2, 2147483647, 0, null ], 10, 14, Vector2( 313, -271 ), 1, null, [ 0, 4, 0, 2147483647, 0, null ], 11, 14, Vector2( 310, -199 ), 1, null, [ 0, 4, 1, 2147483647, 0, null ], 12, 7, Vector2( 455, -400 ), 2, null, [ 0, 8, 0, 1, 10, 0, 2147483647, 0, null, 2147483647, 1, null ], 13, 7, Vector2( 446, -296 ), 2, null, [ 0, 10, 0, 1, 11, 0, 2147483647, 0, null, 2147483647, 1, null ], 14, 7, Vector2( 581, -265 ), 2, null, [ 0, 7, 0, 1, 11, 0, 2147483647, 0, null, 2147483647, 1, null ], 15, 7, Vector2( 561, -492 ), 2, null, [ 0, 6, 0, 1, 9, 0, 2147483647, 0, null, 2147483647, 1, null ], 16, 23, Vector2( 907.533, 66 ), null, null, [ 0, 17, 0, 1, 36, 0, 2, 28, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 17, 23, Vector2( 807.533, -6 ), null, null, [ 0, 21, 0, 1, 35, 0, 2, 24, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, 0.0 ], 18, 23, Vector2( 1206.53, 62 ), null, null, [ 0, 22, 0, 1, 38, 0, 2, 15, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 19, 23, Vector2( 479.533, -26 ), null, null, [ 0, 20, 0, 1, 33, 0, 2, 30, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 20, 23, Vector2( 328.533, -52 ), null, null, [ 0, 31, 0, 1, 32, 0, 2, 26, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 21, 23, Vector2( 652.533, -38 ), null, null, [ 0, 19, 0, 1, 34, 0, 2, 23, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 22, 23, Vector2( 1083.53, -16 ), null, null, [ 0, 16, 0, 1, 37, 0, 2, 29, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 23, 7, Vector2( 658.133, -380 ), 2, null, [ 0, 53, 0, 1, 9, 0, 2147483647, 0, null, 2147483647, 1, null ], 24, 7, Vector2( 670.582, -502 ), 2, null, [ 0, 6, 0, 1, 5, 0, 2147483647, 0, null, 2147483647, 1, null ], 25, 7, Vector2( 807.911, -479 ), 2, null, [ 0, 10, 0, 1, 8, 0, 2147483647, 0, null, 2147483647, 1, null ], 26, 7, Vector2( 694.133, -197 ), 2, null, [ 0, 12, 0, 1, 5, 0, 2147483647, 0, null, 2147483647, 1, null ], 27, 7, Vector2( 843.133, -292 ), 2, null, [ 0, 8, 0, 1, 9, 0, 2147483647, 0, null, 2147483647, 1, null ], 28, 7, Vector2( 1072.13, -303 ), 2, null, [ 0, 54, 0, 1, 11, 0, 2147483647, 0, null, 2147483647, 1, null ], 29, 7, Vector2( 943.133, -261 ), 2, null, [ 0, 27, 0, 1, 10, 0, 2147483647, 0, null, 2147483647, 1, null ], 30, 7, Vector2( 829.133, -144 ), 2, null, [ 0, 14, 0, 1, 5, 0, 2147483647, 0, null, 2147483647, 1, null ], 31, 30, Vector2( 295.4, 59 ), "Terrain_Dirt", ExtResource( 4 ), [ 0, 2, 0, 2147483647, 0, null ], 32, 30, Vector2( 442.4, 100 ), "Terrain_Grass", ExtResource( 3 ), [ 0, 2, 0, 2147483647, 0, null ], 33, 30, Vector2( 565.4, 107 ), "Terrain_Mud", ExtResource( 5 ), [ 0, 2, 0, 2147483647, 0, null ], 34, 30, Vector2( 682.4, 132 ), "Terrain_Tarmac2", ExtResource( 9 ), [ 0, 2, 0, 2147483647, 0, null ], 35, 30, Vector2( 819.336, 149 ), "Terrain_Sand", ExtResource( 6 ), [ 0, 2, 0, 2147483647, 0, null ], 36, 30, Vector2( 939.336, 181 ), "Terrain_Cliff", ExtResource( 1 ), [ 0, 2, 0, 2147483647, 0, null ], 37, 30, Vector2( 1086.34, 252 ), "Terrain_Straw", ExtResource( 2 ), [ 0, 2, 0, 2147483647, 0, null ], 38, 30, Vector2( 1230.59, 325 ), "Terrain_DryMud", ExtResource( 8 ), [ 0, 2, 0, 2147483647, 0, null ], 39, 18, Vector2( 297.748, 365 ), null, null, [ 0, 1, 12, 2147483647, 0, null ], 40, 14, Vector2( 519.748, 463 ), 0, null, [ 0, 39, 1, 2147483647, 0, null ], 41, 25, Vector2( 701.138, 437 ), Vector2Array( 0.625, 0, 0.726563, 0.328125, 0.773438, 0.828125, 0.875, 0.984375 ), null, [ 0, 40, 0, 2147483647, 0, null ], 42, 30, Vector2( 910.743, 434 ), "Terrain_Slope", ExtResource( 7 ), [ 0, 2, 0, 2147483647, 0, null ], 43, 23, Vector2( 1084.74, 460 ), null, null, [ 0, 18, 0, 1, 42, 0, 2, 41, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 44, 18, Vector2( 295.875, 472.448 ), null, null, [ 0, 1, 13, 2147483647, 0, null ], 45, 7, Vector2( 503.875, 571.448 ), 1, null, [ 0, 44, 1, 1, 46, 0, 2147483647, 0, null, 2147483647, 1, null ], 46, 26, Vector2( 326.875, 596.448 ), "Scalar_2", 25.0, [  ], 47, 25, Vector2( 686.875, 575.448 ), Vector2Array( 0.4375, 0, 0.578125, 0.375, 0.679688, 0.828125, 0.835938, 1 ), null, [ 0, 52, 0, 2147483647, 0, null ], 48, 7, Vector2( 1076.87, 622.448 ), 6, null, [ 1, 49, 0, 2147483647, 0, null, 2147483647, 1, null ], 49, 26, Vector2( 848.875, 692.448 ), "Scalar_3", 1.0, [  ], 50, 23, Vector2( 1241.87, 647.448 ), null, null, [ 0, 43, 0, 1, 51, 0, 2, 47, 0, 2147483647, 0, null, 2147483647, 1, null, 2147483647, 2, null ], 51, 30, Vector2( 1108.87, 723.448 ), "Terrain_Snow_2", ExtResource( 10 ), [ 0, 2, 0, 2147483647, 0, null ], 52, 14, Vector2( 599.274, 690.04 ), 13, null, [ 0, 45, 0, 2147483647, 0, null ], 53, 7, Vector2( 453.274, -155.993 ), 2, null, [ 0, 11, 0, 1, 5, 0, 2147483647, 0, null, 2147483647, 1, null ], 54, 7, Vector2( 933.274, -378.12 ), 2, null, [ 0, 7, 0, 1, 9, 0, 2147483647, 0, null, 2147483647, 1, null ] ], [ 0, 33, Vector2( 350, 40 ), null, null, [  ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ] ]
+}
+
