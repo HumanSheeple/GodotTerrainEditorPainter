@@ -3,15 +3,15 @@
 [ext_resource path="res://addons/zylann.terrain/textures/Terrain_bog.png" type="Texture" id=1]
 [ext_resource path="res://addons/zylann.terrain/textures/CliffFace.png" type="Texture" id=2]
 [ext_resource path="res://addons/zylann.terrain/textures/Terrain_Cobble.png" type="Texture" id=3]
-[ext_resource path="res://addons/zylann.terrain/textures/Terrain_ConcSlab.jpg" type="Texture" id=4]
-[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Daisygrass.png" type="Texture" id=5]
-[ext_resource path="res://addons/zylann.terrain/textures/Dirt_Diff.png" type="Texture" id=6]
-[ext_resource path="res://addons/zylann.terrain/textures/Terrain_DryMud.png" type="Texture" id=7]
-[ext_resource path="res://addons/zylann.terrain/textures/Grass.png" type="Texture" id=8]
-[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Leaf.png" type="Texture" id=9]
-[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Mesa.png" type="Texture" id=10]
-[ext_resource path="res://addons/zylann.terrain/textures/Mud.png" type="Texture" id=11]
-[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Pothole.png" type="Texture" id=12]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Concrete.png" type="Texture" id=4]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_ConcSlab.png" type="Texture" id=5]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Daisygrass.png" type="Texture" id=6]
+[ext_resource path="res://addons/zylann.terrain/textures/Dirt_Diff.png" type="Texture" id=7]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_DryMud.png" type="Texture" id=8]
+[ext_resource path="res://addons/zylann.terrain/textures/Grass.png" type="Texture" id=9]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Leaf.png" type="Texture" id=10]
+[ext_resource path="res://addons/zylann.terrain/textures/Terrain_Mesa.png" type="Texture" id=11]
+[ext_resource path="res://addons/zylann.terrain/textures/Mud.png" type="Texture" id=12]
 [ext_resource path="res://addons/zylann.terrain/textures/Sand.png" type="Texture" id=13]
 [ext_resource path="res://addons/zylann.terrain/textures/Terrain_Slate.png" type="Texture" id=14]
 [ext_resource path="res://addons/zylann.terrain/textures/ChalkFace_Diff.png" type="Texture" id=15]
@@ -34,15 +34,15 @@ float green = COLOR.g;
 float blue = COLOR.b;
 float alpha = COLOR.a;
 float cosred = cos(red);
-float factor = 25.0;
-float leaf_factor = 42.0;
+float factor = 45.0;
+float leaf_factor = 70.0;
 uniform texture terrain_dirt;
 uniform texture terrain_grass;
 uniform texture terrain_daisygrass;
 uniform texture terrain_cliff;
 uniform texture terrain_slope;
 uniform texture terrain_tarmac;
-uniform texture terrain_pothole;
+uniform texture terrain_concrete;
 uniform texture terrain_sand;
 uniform texture terrain_mud;
 uniform texture terrain_straw;
@@ -70,22 +70,22 @@ float straw_range = cos(red)*sin(green)*sin(blue)*cos(alpha);
 float drymud_range = sin(red)*sin(green)*sin(blue)*cos(alpha);
 float cobble_range = cos(red)*cos(green)*cos(blue)*sin(alpha);
 float daisygrass_range = cos(red)*sin(green)*cos(blue)*sin(alpha);
-float pothole_range = cos(red)*cos(green)*sin(blue)*sin(alpha);
+float paving_range = cos(red)*cos(green)*sin(blue)*sin(alpha);
 float slate_range = sin(red)*cos(green)*cos(blue)*sin(alpha);
 float bog_range = sin(red)*cos(green)*sin(blue)*sin(alpha);
 float mesa_range = sin(red)*sin(green)*cos(blue)*sin(alpha);
-float leaf_range = cos(red)*sin(green)*sin(blue)*sin(alpha);
-float concslab_range = 2*sin(red)*sin(green)*sin(blue)*sin(alpha);
-float snow_height = 12.0;
-float snow_threshold = 0.4;
-float snow_interval = 0.3;
+float concrete_range = cos(red)*sin(green)*sin(blue)*sin(alpha);
+float leaf_range = 2*sin(red)*sin(green)*sin(blue)*sin(alpha);
+float snow_height = 40.0;
+float snow_threshold = 0.5;
+float snow_interval = 0.2;
 float snow_range = clamp(src_vertex.y-snow_height, 0.0, 1.0);
 snow_range = smoothstep(snow_threshold - snow_interval, snow_threshold + snow_interval, snow_range); 
 float transition_threshold = 0.65;
 float transition_interval = 0.1;
 float slope = clamp(src_normal.y, 0.0, 1.0);
 slope = smoothstep(transition_threshold - transition_interval, transition_threshold + transition_interval, slope);
-DIFFUSE = mix(mix(terrain_trislope, mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(tex(terrain_dirt, UV * factor), tex(terrain_cobble, UV * factor), cobble_range), tex(terrain_grass, UV * factor), grass_range), tex(terrain_cliff, UV * factor), cliff_range), tex(terrain_tarmac, UV * factor), tarmac_range), tex(terrain_sand, UV * factor), sand_range), tex(terrain_mud, UV * factor), mud_range), tex(terrain_daisygrass, UV * factor), daisygrass_range), tex(terrain_pothole, UV * factor), pothole_range), tex(terrain_slate, UV * factor), slate_range), tex(terrain_straw, UV * factor), straw_range), tex(terrain_drymud, UV * factor), drymud_range), tex(terrain_bog, UV * factor), bog_range), tex(terrain_mesa, UV * factor), mesa_range), tex(terrain_leaf, UV * leaf_factor), leaf_range), tex(terrain_concslab, UV * factor), concslab_range), slope), tex(terrain_snow, UV * factor), snow_range).rgb;",
+DIFFUSE = mix(terrain_trislope, mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(mix(tex(terrain_dirt, UV * factor), tex(terrain_cobble, UV * factor), cobble_range), tex(terrain_grass, UV * factor), grass_range), tex(terrain_cliff, UV * factor), cliff_range), tex(terrain_tarmac, UV * factor), tarmac_range), tex(terrain_sand, UV * factor), sand_range), tex(terrain_mud, UV * factor), mud_range), tex(terrain_daisygrass, UV * factor), daisygrass_range), tex(terrain_concslab, UV * factor), paving_range), tex(terrain_slate, UV * factor), slate_range), tex(terrain_straw, UV * factor), straw_range), tex(terrain_drymud, UV * factor), drymud_range), tex(terrain_bog, UV * factor), bog_range), tex(terrain_mesa, UV * factor), mesa_range), tex(terrain_concrete, UV * factor), concrete_range), tex(terrain_leaf, UV * leaf_factor), leaf_range), tex(terrain_snow, UV * factor), snow_range), slope).rgb;",
 "fragment_ofs": 0,
 "light": "",
 "light_ofs": 0,
@@ -107,22 +107,22 @@ params/blend_mode = 0
 params/depth_draw = 1
 params/line_width = 0.0
 shader/shader = SubResource( 1 )
-shader_param/terrain_dirt = ExtResource( 6 )
-shader_param/terrain_grass = ExtResource( 8 )
-shader_param/terrain_daisygrass = ExtResource( 5 )
+shader_param/terrain_dirt = ExtResource( 7 )
+shader_param/terrain_grass = ExtResource( 9 )
+shader_param/terrain_daisygrass = ExtResource( 6 )
 shader_param/terrain_cliff = ExtResource( 2 )
 shader_param/terrain_slope = ExtResource( 15 )
 shader_param/terrain_tarmac = ExtResource( 18 )
-shader_param/terrain_pothole = ExtResource( 12 )
+shader_param/terrain_concrete = ExtResource( 4 )
 shader_param/terrain_sand = ExtResource( 13 )
-shader_param/terrain_mud = ExtResource( 11 )
+shader_param/terrain_mud = ExtResource( 12 )
 shader_param/terrain_straw = ExtResource( 17 )
-shader_param/terrain_drymud = ExtResource( 7 )
+shader_param/terrain_drymud = ExtResource( 8 )
 shader_param/terrain_snow = ExtResource( 16 )
 shader_param/terrain_cobble = ExtResource( 3 )
 shader_param/terrain_slate = ExtResource( 14 )
 shader_param/terrain_bog = ExtResource( 1 )
-shader_param/terrain_mesa = ExtResource( 10 )
-shader_param/terrain_leaf = ExtResource( 9 )
-shader_param/terrain_concslab = ExtResource( 4 )
+shader_param/terrain_mesa = ExtResource( 11 )
+shader_param/terrain_leaf = ExtResource( 10 )
+shader_param/terrain_concslab = ExtResource( 5 )
 

@@ -1,4 +1,4 @@
-Godot Terrain Plugin
+Godot Terrain Plugin v 1.1
 ======================
 
 This is a heightmap-based terrain node for Godot Engine 2.1, written in GDScript.
@@ -7,19 +7,5 @@ This is a heightmap-based terrain node for Godot Engine 2.1, written in GDScript
 
 Simply select terrain, select vertex paint, choose a combo of colors, choose a brush and off you go.
 
-Black = Dirt
-Red = Stone
-Green = Grass
-Blue = Road
-Yellow = Sand
-Magenta = Mud
-Cyan = Straw
-White = Dry Earth
-Black Alpha = Cobblestone
-Red Alpha = Slate
-Green Alpha = Daisies
-Blue Alpha = Pothole'd Road
-Yellow Alpha = Red Mesa Sand
-Magenta Alpha = Clay Mud
-Cyan Alpha = Fallen Leaf
-White Alpha = Concrete Paving Slabs
+You no longer need to manually select colors, there are now terrain type icons, simply select the icon and paint your terrain. Easy :)
+Optionally you can still paint blends of textures using the 5th button on the top row and the color picker if you like.

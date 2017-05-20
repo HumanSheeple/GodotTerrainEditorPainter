@@ -1,12 +1,28 @@
 
 const Util = preload("terrain_utils.gd")
 
-const MODE_ADD = 0
-const MODE_SUBTRACT = 1
-const MODE_SMOOTH = 2
-const MODE_FLATTEN = 3
-const MODE_VXPAINT = 4
-const MODE_COUNT = 5
+const MODE_ADD = 1
+const MODE_SUBTRACT = 2
+const MODE_SMOOTH = 3
+const MODE_FLATTEN = 4
+const MODE_VXPAINT = 5
+const MODE_DIRTPAINT = 6
+const MODE_GRASSPAINT = 7
+const MODE_CLIFFPAINT = 8
+const MODE_ROADPAINT = 9
+const MODE_MESAPAINT = 10
+const MODE_COBBLEPAINT = 11
+const MODE_SANDPAINT = 12
+const MODE_MUDPAINT = 13
+const MODE_SLATEPAINT = 14
+const MODE_STRAWPAINT = 15
+const MODE_DAISYPAINT = 16
+const MODE_CONCSLABPAINT = 17
+const MODE_DRYMUDPAINT = 18
+const MODE_CONCRETEPAINT = 19
+const MODE_BOGPAINT = 20
+const MODE_LEAFPAINT = 21
+const MODE_COUNT = 22
 
 
 var _data = [[]]
@@ -135,7 +151,40 @@ func paint_world_pos(terrain, wpos, override_mode=-1):
 	
 	elif mode == MODE_VXPAINT:
 		_vxpaint(terrain, cell_pos.x, cell_pos.y, _color)
+		
+	elif mode == MODE_DIRTPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,0.0,0.0,0.0))
 	
+	elif mode == MODE_GRASSPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,1.0,0.0,0.0))
+	elif mode == MODE_CLIFFPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,0.0,0.0,0.0))
+	elif mode == MODE_ROADPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,0.0,1.0,0.0))
+	elif mode == MODE_MESAPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,1.0,0.0,1.0))
+	elif mode == MODE_COBBLEPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,0.0,0.0,1.0))
+	elif mode == MODE_SANDPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,1.0,0.0,0.0))
+	elif mode == MODE_MUDPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,0.0,1.0,0.0))
+	elif mode == MODE_SLATEPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,0.0,0.0,1.0))
+	elif mode == MODE_STRAWPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,1.0,1.0,0.0))
+	elif mode == MODE_DAISYPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,1.0,0.0,1.0))
+	elif mode == MODE_CONCSLABPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,0.0,1.0,1.0))
+	elif mode == MODE_DRYMUDPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,1.0,1.0,0.0))
+	elif mode == MODE_CONCRETEPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(0.0,1.0,1.0,1.0))
+	elif mode == MODE_BOGPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,0.0,1.0,1.0))
+	elif mode == MODE_LEAFPAINT:
+		_vxpaint(terrain, cell_pos.x, cell_pos.y, Color(1.0,1.0,1.0,1.0))
 	else:
 		error("Unknown paint mode " + str(mode))
 

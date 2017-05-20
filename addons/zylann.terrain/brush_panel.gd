@@ -23,6 +23,7 @@ onready var _opacity_slider = get_node("params/opacity/slider")
 onready var _height_line_edit = get_node("params/height/LineEdit")
 
 onready var _mode_selector = get_node("params/mode_selector")
+onready var _mode_selector2 = get_node("params/mode_selector2")
 
 onready var _save_to_image_button = get_node("save_to_image")
 onready var _Color_Picker_Button = get_node("params/ColorPickerButton")
@@ -46,9 +47,10 @@ func _ready():
 		_height_line_edit.connect("text_entered", self, "_on_height_line_edit_entered")
 		_Color_Picker_Button.connect("color_changed", self, "_on_Color_Picker_Button_changed")
 		_mode_selector.connect("button_selected", self, "_on_mode_selector_button_selected")
-		
+		_mode_selector2.connect("button_selected", self, "_on_mode_selector2_button_selected")
 		_save_to_image_button.connect("pressed", self, "_on_save_to_image_button_clicked")
-
+		_on_shape_selected(1)
+		_on_mode_selector_button_selected(1)
 
 func _build_shape_selector():
 	_shape_selector.set_same_column_width(true)
@@ -101,10 +103,17 @@ func _on_Color_Picker_Button_changed(color):
 
 
 func _on_mode_selector_button_selected(button):
-	emit_signal("brush_mode_changed", button)
+	_mode_selector2.set_selected(0)
+	if button !=0:
+		emit_signal("brush_mode_changed", button)
 	_Color_Picker_Button.is_editing_alpha()
 	_height_line_edit.set_editable(button == Brush.MODE_FLATTEN)
 
+func _on_mode_selector2_button_selected(button):
+	_mode_selector.set_selected(0)
+	if button !=0:
+		emit_signal("brush_mode_changed", button+10)
+	_Color_Picker_Button.is_editing_alpha()
 
 func _on_save_to_image_button_clicked():
 	# TODO Use FileDialog, I have no idea how yet
